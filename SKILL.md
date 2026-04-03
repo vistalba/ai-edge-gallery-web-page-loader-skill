@@ -1,6 +1,6 @@
 ---
 name: web-page-loader
-description: Load a web page from a given URL and return its full text content as context for the LLM. Use when the user provides a URL and asks to load, read, fetch, analyze, or summarize a web page.
+description: Load a web page from a given URL and return its full text content as context for the LLM to process. Use when the user provides a URL and asks to load, read, fetch, analyze, or summarize a web page.
 ---
 
 # Web Page Loader
@@ -9,16 +9,14 @@ This skill fetches the complete content of a web page from a provided URL and re
 
 ## Examples
 
-* "Load this page: https://en.wikipedia.org/wiki/Switzerland"
-* "Read the content of https://example.com and summarize it"
-* "What does this article say? https://news.example.com/article"
+- "Load this page: https://en.wikipedia.org/wiki/Switzerland"
+- "Read the content of https://example.com and summarize it"
+- "What does this article say? https://news.example.com/article"
 
 ## Instructions
 
-Call the `run_js` tool with the following exact parameters:
+Call the run_js tool with the following exact parameters:
 - data: A JSON string with the following fields
-  - url: The full URL of the web page to load (e.g., "https://example.com/article").
+  - url: the full URL of the web page to load (e.g., "https://example.com/article").
 
-DO NOT use any other tool, DO NOT call `run_intent`.
-
-After receiving the result, use the returned text content as context to answer the user's follow-up questions, summarize the page, or perform any requested analysis.
+DO NOT use any other tool, DO NOT call run_intent.
